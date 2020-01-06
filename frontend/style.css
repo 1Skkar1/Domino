@@ -1,0 +1,932 @@
+body {
+	overflow: hidden;
+	overflow-y: auto;
+	background-image: 
+	linear-gradient(45deg, transparent 20%, black 25%, transparent 25%), 
+    linear-gradient(-45deg, transparent 20%, black 25%, transparent 25%), 
+    linear-gradient(-45deg, transparent 75%, black 80%, transparent 0),
+    radial-gradient(gray 2px, transparent 0);
+	background-size: 30px 30px, 30px 30px;
+}
+
+.authorship {
+	position: absolute;
+	top: 1%;
+	right: 1%;
+	font-family: 'VT323', monospace;
+	font-size: 12px;
+	font-weight: normal;
+	color: white;
+	z-index: 999999;
+	display: block;
+}
+
+.whiteSheet {
+	position: absolute;
+	background: white;
+	top: 15%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1;
+	display: none;
+}
+
+.stopScroll {
+	overflow-y: hidden;
+}
+
+.centerDom {
+	position: fixed;
+	top: 30px;
+	left: 24%;
+	width: 50%;
+	margin: 0 auto;
+}
+
+.header {
+	position: absolute;
+	padding: 5px;
+	top: 0;
+  	text-align: center;
+  	background: black;
+  	color: white;
+  	font-size: 30px;
+  	width: 100%;
+  	margin: 0;
+  	left: 0px;
+  	margin-right: 0;
+  	margin-left: 0;
+	margin-top: 0;
+}
+
+.logopic {
+	height: 100px; 
+	width: auto; 
+	float: left;
+}
+
+.userlogin {
+	border-radius: 5px;
+	position: absolute;
+	padding: 15px;
+  	background: black;
+  	top: 17.5%;
+	left: 35%;
+	width: 26.5%;
+  	color: white;
+	font-size: 30px;
+	z-index: 99999;
+}
+
+.logout{
+	position: absolute;
+	margin-top: 105px;
+	display: none;
+	z-index: 99999;
+}
+
+.singlemulti {
+	position: absolute;
+	width: 100%;
+	top: 20%;
+	left: 39%;
+	overflow: hidden;
+	display: none;
+	z-index: 99999;
+}
+
+.smButton {
+	border: 2px solid black;
+	width: 20%;
+	height: 65px;
+	display: block;
+	z-index: 99999;
+}
+
+.configmenu {
+	position: absolute;
+	left: 35%;
+	width: 26.5%;
+	margin: 0 auto;
+	height: auto;
+	border-radius: 5px;
+	top: 20%;
+	padding: 15px;
+  	text-align: left;
+  	background: black;
+  	color: white;
+  	font-size: 18px;
+	display: none;	
+	z-index: 99999;
+}
+
+.leftright {
+	position: absolute;
+	left: 35%;
+	overflow: hidden;
+	top: 80%;
+	margin-left: 3px;
+	margin-top: 7.5px;
+	z-index: 99999;
+	display: none;
+}
+
+.LRbutton {
+	display: none;
+	width:80px;
+	border-top: 5px solid black;
+	border-right: 5px solid black;
+	border-left: 5px solid black;
+	z-index: 99999;
+}
+
+.commands {
+	position: absolute;
+  	text-align: left;
+  	background: none;
+	top: 20.5%;
+  	margin-left: 5px;
+  	width: 8.5%;
+  	left: 5px;
+  	font-size: 30px;	
+	display: none;
+	z-index: 99999;
+}
+
+.commandbutton {
+	border-radius: 2.5%;
+	margin-top: 150px;
+	background-color: red;
+	color: white;
+	cursor: pointer;
+	padding: 15px;
+	width: 100%;
+	border: none;
+	text-align: center;
+	outline: 1px solid black;
+	font-size: 15px;
+	z-index: 99999;
+}
+
+.rulesbutton {
+	border-radius: 2.5%;
+	margin-top: 0px;
+	background-color: red;
+	color: black;
+	cursor: pointer;
+	padding: 15px;
+	width: 100%;
+	border: none;
+	text-align: center;
+	outline: 0.5px solid white;
+	font-size: 15px;
+	z-index: 11;
+}
+
+.active, .rulesbutton, .commandbutton:hover {
+	background-color: #ff3232;
+}
+
+.rules {
+	position: absolute;
+	top: 17%;
+	left: 13%;
+	width: 70%;
+	background-color: black;
+	color: white;
+	z-index: 999999999;
+	padding: 0 20px;
+	text-align: center;
+	border-radius: 10px;
+	border: 2px solid red;
+	display: none;
+}
+
+.gamerules {
+	position: absolute;
+	padding: 15px;
+	padding-right: 15px;
+  	margin-left: 353px;
+  	margin-right: 0px;
+	margin-top: 10px;
+	right: 0%;
+  	color: black;
+  	font-size: 20px;
+  	z-index: 9999;	
+}
+
+.tiles {
+	position: absolute;
+	padding: 15px;
+	text-align: center;
+	background: none;
+	margin-top: 107px;
+	margin-left: 365px;
+	margin-right: 30px;
+	color: black;
+	font-size: 35px;
+	z-index: 10;
+	cursor: pointer;
+	display: none;
+}
+
+.mytiles {
+	position: fixed;
+	bottom: 0;
+	left: 10%;
+	width: 60%;
+	height: 10%;
+	margin: auto;
+	background: red;
+	text-align: center;
+	border-radius: 25px 25px 0 0;
+	border-top: 1px double black;
+	border-left: 1px double black;
+	border-right: 1px double black;
+	border-width: 8px;
+	cursor: pointer;
+	display: none;
+	z-index: 5000;
+}
+
+.oppotiles {
+	position: fixed;
+	bottom: 0;
+	left: 25%;
+	width: 40%;
+	height: 10%;
+	margin: auto;
+	background: red;
+	text-align: center;
+	border-radius: 25px 25px 0 0;
+	border-top: 1px double black;
+	border-left: 1px double black;
+	border-right: 1px double black;
+	border-width: 8px;
+	cursor: pointer;
+	display: none;
+	z-index: 1;
+}
+
+.opotiles {
+	padding: 5px;
+	display: inline;
+	font-weight: 500;
+	font-size: 45pt;
+}
+
+.theirtiles {
+	position: absolute;
+	top: 15%;
+	left: 10%;
+	width: 60%;
+	height: 10%;
+	margin: auto;
+	background: red;
+	text-align: center;
+	border-radius: 0 0 25px 25px;
+	border-bottom: 1px double black;
+	border-left: 1px double black;
+	border-right: 1px double black;
+	border-width: 8px;
+	cursor: pointer;
+	display: none;
+	z-index: 5000;
+}
+
+.outline {
+	color:white;
+}
+
+.p1tag {
+	position: fixed;
+	left: 70%;
+	width: 7%;
+	height: 7%;
+	bottom: 0;
+	float: right;
+	border-radius: 0 25px 0 0;
+	border-top: 1px double black;
+	border-right: 1px double black;
+	border-width: 8px;
+	background-color: red;
+	text-align: left;
+	display: none;
+	padding-left: 50px;
+	z-index: 5;
+}
+
+.p2tag {
+	position: absolute;
+	left: 70%;
+	top: 15%;
+	width: 7%;
+	height: 7%;
+	border-radius: 0 0 25px 0;
+	border-bottom: 1px double black;
+	border-right: 1px double black;
+	border-width: 8px;
+	background-color: red;
+	text-align: left;
+	display: none;
+	padding-left: 50px;
+	z-index: 5;
+}
+
+.pushup {
+	font-size: 60px;
+	padding: auto;
+	margin: -5px auto;
+	font-weight: 100;
+}
+
+.leaderboard {
+	position: absolute;
+	margin-left: 34.5%;
+	width: 30%;
+	top: 60%;
+	display: none;
+	z-index: 99999;
+}
+
+.row {
+	position: relative;
+	display: block;
+	width: 95%;
+	height: 40px;
+	border-bottom: 1px solid black;
+	background: white;
+}
+
+.leaderboardButton {
+	position: absolute;
+	top: 47%;
+	left: 41%;
+	z-index: 999999;
+}
+
+.lbButton {
+	font-family: 'Bangers', cursive;
+	font-size: 30px;
+	font-weight: normal;
+	border: 2px solid black;
+	border-radius: 7px;
+}
+
+.row:nth-child(1) {
+	border-radius: 15px 15px 0 0;
+	background-color: white;
+}
+.row:nth-child(2) {
+	background-color: gold;
+}
+.row:nth-child(3) {
+	background-color: silver;
+}
+.row:nth-child(4) {
+	background-color: #cd7f32;
+}
+
+.playerName {
+	margin-top: 15px;
+	margin-left: 10px;
+	float: left;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 13px;
+	font-weight: normal;
+}
+
+.playerGames {
+	position: absolute;
+	margin-top: 15px;
+	margin-left: 46%;
+	float: left;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 17px;
+	font-weight: normal;
+}
+
+.playerGamesH {
+	margin-top: 15px;
+	margin-left: 45%;
+	float: left;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 17px;
+	font-weight: normal;
+}
+
+.playerWins {
+	margin-top: 15px;
+	margin-right: 10px;
+	float: right;
+	font-family: 'Press Start 2P', cursive;
+	font-size: 17px;
+	font-weight: normal;
+}
+
+.fontmargin {
+	margin-left: 105px;
+	font-size: 13px;
+}
+
+.font13 {
+	font-size: 13px;
+}
+
+.font18 {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 18px;
+	font-weight: normal;
+}
+
+.font100 {
+	font-size: 100px;
+}
+
+.inline {
+	display: inline-block;
+}
+
+.gamelog {
+	position: fixed;
+	right: 0;
+	width: 18%;
+	top: 15%;
+	margin-top: 15px;
+	height: 80%;
+	overflow-y: auto;
+	background: red;
+	display: none;
+	z-index: 5000;
+	border-radius: 10px 0 0 10px;
+	border-top: 3px solid black;
+	border-left: 3px solid black;
+	border-bottom: 3px solid black;
+	font-family: 'Quicksand', sans-serif;
+	font-size: 15px;
+	font-weight: 100;
+}
+
+.gamefield {
+	position: fixed;
+	width: 75%;
+	height: 65%;
+	top: 12%;
+	left: 10%;
+	text-align: center;
+	display: none;
+	background: none;
+	z-index: 99999;
+}
+
+.deck {
+	position: absolute;
+	background: none;
+	top: 50%;
+	left: 0;
+	width: 6%;
+	height: 17%;
+	cursor: pointer;
+	display: none;
+	background: red;
+	border-radius: 0 10px 10px 0;
+	border-top: 3px solid black;
+	border-right: 3px solid black;
+	border-bottom: 3px solid black;
+	z-index: 999999;
+}
+
+.decknumber {
+	position: absolute;
+	background: none;
+	padding: 3px;
+	top: 58.25%;
+	left: 2.25%;
+	background: black;
+	z-index: 9999999;
+	color: white;
+	border-radius: 250px;
+	display: none;
+}
+
+.winScreen {
+	position: absolute;
+	top: 25%;
+	background: none;
+	left: 25%;
+	width: 50%;
+	display: none;
+	z-index: 99999;
+}
+
+.loseScreen {
+	position: absolute;
+	top: 25%;
+	background: none;
+	left: 25%;
+	width: 50%;
+	display: none;
+	z-index: 99999;
+}
+
+.tieScreen {
+	position: absolute;
+	top: 25%;
+	background: none;
+	left: 25%;
+	width: 50%;
+	display: none;
+	z-index: 99999;
+}
+
+.replaybutton {
+	left: 35%;
+	width: 35%;
+	outline: 3px solid black;
+	z-index: 99999;
+}
+
+.quitbutton {
+	left: 35%;
+	width: 35%;
+	outline: 3px solid black;
+	z-index: 99999;
+}
+
+.exitbutton {
+	left: 35%;
+	width: 35%;
+	outline: 3px solid black;
+	z-index: 99999;
+}
+
+.fieldpiece {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	font-weight: 300;
+	font-size: 50pt;
+	color:black;
+}
+
+.center {
+	text-align: center;
+}
+
+.hidden {
+	display: none;
+}
+
+.shown {
+	display: block;
+}
+
+.shrink{
+	-webkit-transform:scale(0.8);
+	-moz-transform:scale(0.8);
+	-ms-transform:scale(0.8);
+	transform:scale(0.8);
+}
+
+.shrink2{
+	-webkit-transform:scale(0.6);
+	-moz-transform:scale(0.6);
+	-ms-transform:scale(0.6);
+	transform:scale(0.6);
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Opera and Firefox */
+}
+
+#retro {
+	font-family: 'Press Start 2P', cursive;
+	font-size: 45px;
+	font-weight: normal;
+}
+
+#stout {
+	font-family: 'Notable', sans-serif;
+	font-size: 20px;
+	font-weight: normal;
+}
+
+#fredoka {
+	font-family: 'Fredoka One', cursive;
+	font-size: 20px;
+	font-weight: normal;
+}
+
+#lucky {
+	font-family: 'Luckiest Guy', cursive;
+	font-size: 30px;
+	font-weight: normal;
+}
+
+#bangers {
+	font-family: 'Bangers', cursive;
+	font-size: 30px;
+	font-weight: normal;
+}
+
+#playfair {
+	font-family: 'VT323', monospace;
+	font-size: 20px;
+	font-weight: normal;
+}
+
+#forthelog {
+	font-family: 'Odibee Sans', cursive;
+	font-size: 20px;
+	font-weight: normal;
+}
+
+#noclick {
+    position: absolute;
+    top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+    z-index: 999999999;
+	background-color: red;
+	display: none;
+	opacity: 0.7;
+}
+
+/* Bordered form */
+form {
+ 	border: 2px solid white;
+ 	border-radius: 2.5%;
+}
+
+/* Full-width inputs */
+input[type=text], input[type=password] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 0px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+}
+
+/* Set a style for all buttons */
+button {
+  	background-color: red;
+  	color: white;
+  	padding: 14px 20px;
+  	margin: 8px 0;
+  	border: none;
+  	cursor: pointer;
+  	width: 100%;
+}
+
+button {
+  	background-color: red;
+  	color: white;
+  	padding: 14px 20px;
+  	margin: 8px 0;
+  	border: none;
+  	cursor: pointer;
+  	width: 100%;
+}
+
+button:hover {
+	background: #ff5757;
+}
+
+.container {
+	padding: 15px;
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+ 	span.psw {
+    	display: block;
+    	float: none;
+  	}
+  	.cancelbtn {
+    	width: 100%;
+  	}
+}
+
+::-webkit-scrollbar {
+	display: none;
+}
+
+.lookingforgame {
+	position: absolute;
+	top: 17%;
+	left: 35.5%;
+	border-radius: 15px;
+	background: lightcoral;
+	display: none;
+}
+
+.loadingboxes {
+    height: 32px;
+    width: 32px;
+	position: absolute;
+	left: 47%;
+	top: 30%;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform-origin: 50% 50%;
+    transform-origin: 50% 50%;
+    -webkit-transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
+	transform: rotateX(60deg) rotateZ(45deg) rotateY(0deg) translateZ(0px);
+	display: none;
+}
+.loadingboxes .box {
+    width: 32px;
+    height: 32px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+}
+
+
+
+.loadingboxes .box:nth-child(1) {
+    -webkit-transform: translate(100%, 0);
+    transform: translate(100%, 0);
+    -webkit-animation: box1 1s linear infinite;
+    animation: box1 1s linear infinite;
+}
+.loadingboxes .box:nth-child(2) {
+    -webkit-transform: translate(0, 100%);
+    transform: translate(0, 100%);
+    -webkit-animation: box2 1s linear infinite;
+    animation: box2 1s linear infinite;
+}
+.loadingboxes .box:nth-child(3) {
+    -webkit-transform: translate(100%, 100%);
+    transform: translate(100%, 100%);
+    -webkit-animation: box3 1s linear infinite;
+    animation: box3 1s linear infinite;
+}
+.loadingboxes .box:nth-child(4) {
+    -webkit-transform: translate(200%, 0);
+    transform: translate(200%, 0);
+    -webkit-animation: box4 1s linear infinite;
+    animation: box4 1s linear infinite;
+}
+
+
+
+.loadingboxes .box > div {
+    --translateZ: 15.5px;
+    --rotateY: 0deg;
+    --rotateX: 0deg;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    left: auto;
+    -webkit-transform: rotateY(var(--rotateY)) rotateX(var(--rotateX)) translateZ(var(--translateZ));
+    transform: rotateY(var(--rotateY)) rotateX(var(--rotateX)) translateZ(var(--translateZ));
+}
+
+.loadingboxes .box > div:nth-child(1) {
+    top: 0;
+    left: 0;
+    background: #b30000;
+}
+.loadingboxes .box > div:nth-child(2) {
+	border: 0.5px solid black;
+    background: #800000;
+    right: 0;
+    --rotateY: 90deg;
+}
+.loadingboxes .box > div:nth-child(3) {
+	border: 0.5px solid black;
+    background: red;
+    --rotateX: -90deg;
+}
+
+
+@keyframes box1 {
+    0%,
+    50% {
+        transform: translate(100%, 0);
+    }
+    100% {
+        transform: translate(200%, 0);
+    }
+}
+
+@keyframes box2 {
+    0%{
+        transform: translate(0, 100%);
+    }
+    50% {
+        transform: translate(0, 0);
+    }
+    100% {
+        transform: translate(100%, 0);
+    }
+}
+
+@keyframes box3 {
+    0%,
+    50% {
+        transform: translate(100%, 100%);
+    }
+    100% {
+        transform: translate(0, 100%);
+    }
+}
+
+@keyframes box4 {
+    0%{
+        transform: translate(200%, 0);
+    }
+    50% {
+        transform: translate(200%, 100%);
+    }
+    100% {
+        transform: translate(100%, 100%);
+    }
+}
+
+.turnlabel {
+	position: absolute;
+	top: 20%;
+	padding: 5px;
+	background: red;
+	border: 2px solid black;
+	border-radius: 15px;
+	font-family: 'VT323', monospace;
+	font-size: 20px;
+	font-weight: normal;
+	z-index: 9999;
+	display: none;
+}
+
+.drawlabel {
+	position: absolute;
+	top: 57%;
+	left: 6.5%;
+	padding: 5px;
+	background: red;
+	border: 4px solid black;
+	border-radius: 15px;
+	font-family: 'VT323', monospace;
+	font-size: 22px;
+	font-weight: normal;
+	z-index: 99999999;
+	display: none;
+}
+
+.hourglass {
+	position: absolute;
+	top: 22.5%;
+	left: 2%;
+	z-index: 9999999;
+	display: none;
+	background: none;
+}
+  
+.loader {
+	width: 85px;
+	height: 85px;
+	transition: .5s ease-in-out;
+	animation: loaderAnim 1s infinite;
+	background:
+		conic-gradient(
+			from 90deg,
+		  	transparent 12.5%, #ff7d7d 12.5%,
+			rgb(208, 4, 4) 37.5%, transparent 37.5%,
+			transparent 62.5%, rgb(208, 4, 4) 62.5%,
+			#ff7d7d 87.5%, transparent 87.5%
+		)
+		50% 50% / 32% 50%
+		no-repeat;
+}
+  
+@keyframes loaderAnim {
+	0%{
+	  transform: rotate(0);
+	}
+	100%{
+	  transform:rotate(360deg);
+	}
+}
+
+
+
+
+
+
+
+

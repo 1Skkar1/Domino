@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html>
+	<head>
+		 <meta charset=UTF-8>
+    	<title> Domino </title>
+    	<link rel="stylesheet" href="style.css">
+
+    	<link href="https://fonts.googleapis.com/css?family=Press+Start+2P|Notable|Fredoka+One|Luckiest+Guy|Bangers|VT323|Quicksand&display=swap" rel="stylesheet">
+		
+		<link rel="apple-touch-icon" sizes="180x180" src="images/apple-touch-icon.png">
+	    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+	    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+	    <link rel="manifest" href="images/site.webmanifest">
+
+	    <div class="header">
+			<img class="logopic" src="images/dominologobw.png">
+	    	<h1 class="centerDom" id="retro"> D O M I N O </h1>
+	    </div>
+	</head>
+	
+	<body>
+		<div class="authorship">Francisco Gonçalves <br> up201604505@fc.up.pt</div>
+		<div class="whiteSheet" id="whitesheet"></div>
+		<div class="userlogin" id="userlogin">
+	    	<form action="#" onsubmit="return checkFields();">
+				<div class="container">
+			    	<input type="text" placeholder="Enter Username" name="uname" id="uname">
+
+			    	<input type="password" placeholder="Enter Password" name="psw" id="passwd">
+
+			    	<button type="submit" id="loginbutton"> <b>L O G I N</b> </button>
+			  	</div>
+			</form>
+		</div>
+		
+		<div class="singlemulti" id="singlemulti">
+			<button type="button" class="smButton" id="singlebutton"> SinglePlayer </button>
+			<br>
+			<button type="button" class="smButton" id="multibutton"> MultiPlayer </button>
+		</div>
+
+	    <div class="configmenu" id="configmenu"> 
+	    	<form>
+	    		<div class="container">
+					<h1 id="playfair">
+						<input type="radio" name="CPU" id="cpu1" value="CPU - Easy" required checked> beginner <br>
+						<input type="radio" name="CPU" id="cpu2" value="CPU - Medium" required> intermediate <br>
+						<input type="radio" name="CPU" id="cpu3" value="CPU - Hard" required> hard <br><br>
+						<input type="button" id="gamestart" value="Start">
+					</h1>
+	    		</div>
+	    	</form>
+	    </div>
+
+	    <div class="p1tag" id="p1tag">
+	    </div>
+
+	    <div class="p2tag" id="p2tag">
+		</div>
+		
+		<div class="leftright" id="lrbutton">
+			<span class="inline">
+				<button type="button" class="LRbutton" id="Lbutton" value="1"> Left </button>
+				<button type="button" class="LRbutton" id="Rbutton" value="-1"> Right </button>
+			</span>
+		</div>
+
+	    <div class="commands" id="commands">
+	    	<button type="button" class="commandbutton" id="surrenderbutton"> Surrender </button>
+	    	<button type="button" class="commandbutton" id="skipbutton"> Skip Turn </button>
+	    </div>
+
+	    <div class="logout" id="logout">
+	    	<form id="logout">
+	    		<a href="javascript: void(0)" id="logoutbutton">(logout)</a>
+	    	</form> 
+	    </div> 
+
+		<div class="lookingforgame" id="lookingforgame">
+			<h1 class="font18"> looking for opponent... </h1>
+		</div>
+
+	    <div class="gamerules">
+	    	<button type="button" class="rulesbutton thin" id="rulesbutton"> R U L E S </button>
+		</div>
+		
+		<div class="rules thin" id="rules">
+	    	<h1 id="playfair">OBJETIVO: <br> Ser o primeiro a baixar todas as suas peças.</h5>
+		   	<h1 id="playfair">Cada jogador recebe 7 peças aleatórias.</h5>
+		   	<h1 id="playfair">O jogador que tiver a peça mais alta é o primeiro a jogar.</h5>
+			
+		   	<h1 id="playfair"> Em cada turno, o jogador correspondente deve colocar uma das suas peças numa das pontas do dominó no campo de jogo desde que, pelo menos uma das pontas tenha o mesmo valor que o valor da ponta escolhida do dominó.</h5>
+			<h1 id="playfair"> Caso não consiga jogar uma peça válida, o jogador deve tirar novas peças do baralho até obter uma que encaixe no tabuleiro.</h1>
+			<h1 id="playfair"> Se o baralho estiver vazio, o jogador tem de passar o turno.</h1>
+		   	<h1 id="playfair"> Se o adversário também não conseguir jogar então é considerado empate.</h1>	
+	    </div>
+
+	    <div class="mytiles noselect" id="mytiles">
+			<div id="noclick" onclick="window.alert('Please wait for your turn to play..')"></div>
+	    	<div class="pushup thin" id="mytiles2">
+	    	</div>
+		</div>
+		
+		<div class="oppotiles noselect hidden" id="oppotiles">
+	    	<div class="pushup thin hidden" id="oppotiles2">
+	    	</div>
+	    </div>
+
+	    <div class="theirtiles noselect" id="theirtiles" onclick="alert('Opponent Tiles')">
+	    	<div class="pushup" id="theirtiles2">
+	    	</div>
+		</div>
+		
+		<div class="leaderboardButton" id="leaderboardButton">
+			<button type="button" class="lbButton center" id="lbButton"> L E A D E R B O A R D </button>
+		 </div>
+
+	    <div class="leaderboard" id="leaderboard">
+	   		<div class="row">
+	    		<div class="playerName"> PLAYER </div><div class="playerGamesH fontmargin"> GAMES </div><div class="playerWins font13"> WINS </div>
+	    	</div>
+	    	<div class="row">
+	    		<div class="playerName" id="rp0">  </div><div class="playerGames" id="rg0">  </div><div class="playerWins" id="rw0">  </div>
+	    	</div> 
+	    	<div class="row">
+	    		<div class="playerName" id="rp1">  </div><div class="playerGames" id="rg1">  </div><div class="playerWins" id="rw1">  </div>
+	    	</div> 
+	    	<div class="row">
+	    		<div class="playerName" id="rp2">  </div><div class="playerGames" id="rg2">  </div><div class="playerWins" id="rw2">  </div>
+			</div> 
+			<div class="row">
+	    		<div class="playerName" id="rp3">  </div><div class="playerGames" id="rg3">  </div><div class="playerWins" id="rw3">  </div>
+			</div>
+			<div class="row">
+				<div class="playerName" id="rp4">  </div><div class="playerGames" id="rg4">  </div><div class="playerWins" id="rw4">  </div>
+			</div> 
+			<div class="row">
+				<div class="playerName" id="rp5">  </div><div class="playerGames" id="rg5">  </div><div class="playerWins" id="rw5">  </div>
+			</div> 	
+			<div class="row">
+				<div class="playerName" id="rp6">  </div><div class="playerGames" id="rg6">  </div><div class="playerWins" id="rw6">  </div>
+			</div>
+			<div class="row">
+				<div class="playerName" id="rp7">  </div><div class="playerGames" id="rg7">  </div><div class="playerWins" id="rw7">  </div>
+			</div>
+			<div class="row">
+				<div class="playerName" id="rp8">  </div><div class="playerGames" id="rg8">  </div><div class="playerWins" id="rw8">  </div>
+			</div>
+			<div class="row">
+				<div class="playerName" id="rp9">  </div><div class="playerGames" id="rg9">  </div><div class="playerWins" id="rw9">  </div>
+			</div>
+		</div>    
+
+	    <div class="gamelog" id="gamelog" id="forthelog">
+	    </div>
+
+	    <div class="gamefield noselect" id="gamefield">
+		</div>
+
+		<div class="deck noselect" id="deck">
+			<h1 class="pushup thin font100"> &#127074 </h1>
+		</div>
+		<div class="decknumber noselect" id="decknumber"> 
+		</div>
+
+		<div class="drawlabel" id="drawlabel">
+			DRAW
+		</div>
+
+		<div class="winScreen center" id="winscreen">
+			<h1 id="retro">Y O U &nbsp; W I N</h1>
+			<button type="button" class="replaybutton"  id="replayWbutton"> Play Again </button>
+	    	<button type="button" class="exitbutton" id="quitWbutton"> Exit </button>
+		</div>
+
+		<div class="loseScreen center" id="losescreen">
+			<h1 id="retro">Y O U &nbsp; L O S E</h1>
+			<button type="button" class="replaybutton" id="replayLbutton"> Play Again </button>
+	    	<button type="button" class="quitbutton" id="quitLbutton"> Quit </button>
+		</div>
+
+		<div class="tieScreen center" id="tiescreen">
+			<h1 id="retro"> T I E </h1>
+			<button type="button" class="replaybutton" id="replayTbutton"> Play Again </button>
+			<button type="button" class="quitbutton" id="quitTbutton"> Quit </button>
+		</div>
+
+		<div class="loadingboxes" id="loadingboxes">
+			<div class="box">
+				<div> 
+				</div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="box">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="box">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<div class="box">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+
+		<div class="hourglass" id="hourglass">
+			<div class="loader"></div>
+		</div>
+
+		<div class="turnlabel" id="theirturn">
+			OPPONENT'S TURN
+		</div>
+
+		<div class="turnlabel" id="yourturn">
+			YOUR TURN
+		</div>
+
+		<script src="requests.js"></script>
+		<script src="generic.js"></script>
+		<script src="main.js"></script>		
+		<script src="scriptSP.js"></script>
+		<script src="scriptMP.js"></script>
+		</body>
+</html>
